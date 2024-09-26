@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../models/task.dart';
 
 class TaskCard extends StatelessWidget {
@@ -6,12 +7,15 @@ class TaskCard extends StatelessWidget {
   final VoidCallback onStatusChange;
   final VoidCallback onDelete;
 
-  TaskCard({required this.task, required this.onStatusChange, required this.onDelete});
+  TaskCard(
+      {required this.task,
+      required this.onStatusChange,
+      required this.onDelete});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: task.status == 'Concluída' ? Colors.green[300] : Colors.grey[800],
+      color: task.status == 'Concluída' ? Color(0x90AEE637) : Color(0xFF383939),
       child: ListTile(
         title: Text(
           task.title,
@@ -25,7 +29,8 @@ class TaskCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             IconButton(
-              icon: Icon(task.status == 'Concluída' ? Icons.undo : Icons.check, color: Colors.white),
+              icon: Icon(task.status == 'Concluída' ? Icons.undo : Icons.check,
+                  color: Colors.white),
               onPressed: onStatusChange,
             ),
             IconButton(
