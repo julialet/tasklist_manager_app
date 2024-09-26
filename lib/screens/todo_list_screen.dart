@@ -91,7 +91,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
             ),
             Text(
               date.toString(),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white,
+              ),
             )
           ]),
           centerTitle: true,
