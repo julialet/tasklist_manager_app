@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'screens/todo_list_screen.dart';
 import 'theme/app_theme.dart';
 
@@ -13,6 +14,7 @@ class TodoApp extends StatelessWidget {
       title: 'Lista de Tarefas',
       theme: AppTheme.lightTheme,
       home: TodoListScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
