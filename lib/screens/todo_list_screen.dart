@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../models/task.dart';
 import '../widgets/task_card.dart';
@@ -13,6 +14,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
 
   final TextEditingController taskController = TextEditingController();
   final date = DateTime.now();
+  final formattedDate = DateFormat('dd/MM/yyyy').format(DateTime.now());
 
   void _addTask(String taskTitle) {
     setState(() {
@@ -90,7 +92,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
             Text(
-              date.toString(),
+              formattedDate,
               style: TextStyle(
                 color: Colors.white,
               ),
